@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="float-right mr-4"  
+            (click) ="onAddUser()" routerLink ="new"><i class =" btn btn-primary fa fa-plus"></i>
+            </button> 
+        </div>
+        <div class="col-md-3">
+            <label>Search:</label>
+            <!-- <i class ="fa fa-filter ml-3"></i>    -->
+            <input type ="text" class ="form-control" id ="search">
+             <!-- [(ngModel)] ='filteredStatus'>  -->
+            <br>
+        </div>
+        <div class="col-md-12">
+            <table class ="table table-trapped table-hover">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th> Email</th>
+                        <th> First Name </th>
+                        <th>Last Name</th>
+                        <!-- <th>Roles</th>
+                        <th>Created At</th> -->
+                        <th>Active Status</th>
+                        <th>Action</th> 
+                    </tr>
+                </thead>
+                <tbody  *ngFor ="let i of loadedData">
+                 <!-- | filter:filteredStatus:'status'"> -->
+                    <tr>
+                        <td>{{i.username}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.firstName}}</td>
+                        <td>{{i.lastName}}</td>
+                        <!-- <td>{{i.roles}}</td>
+                        <td>  
+                         </td>  -->
+                        <td>{{i.status}}</td>
+                        <td>
+                            <button mat-button (click)="onView()">
+                                <i class ="btn btn-sm fa fa-eye" style="color:rgb(71, 194, 194)"></i>
+                            </button>
+                            <button (click)="onEdit()">
+                                <i class ="btn btn-sm fa fa-pencil" style="color:rgb(43, 163, 43)"></i>
+                            </button>
+                            <button (click)="onDelete()">
+                                <i class =" btn  btn-sm fa fa-trash" style="color:rgb(231, 46, 46)"></i>
+                            </button>
+                        </td>     
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+                 

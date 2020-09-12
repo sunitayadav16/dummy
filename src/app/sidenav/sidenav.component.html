@@ -1,0 +1,42 @@
+<mat-list role="list" >
+    <mat-list-item role="listitem">
+        <i class ="fa fa-tachometer icon "></i>
+        Dashboard</mat-list-item>
+    <mat-list-item role="listitem">
+        <i class ='fa fa-users icon'></i>
+        CRM 
+        <span class ="icon ml-5"></span>
+        <i class ="fa fa-caret-down" data-toggle ="collapse"></i>
+     </mat-list-item>
+    <mat-list-item role="listitem">
+        <i class ="fa fa-file-text icon"></i>
+        Accounting</mat-list-item>
+    <mat-list-item role="listitem">
+        <i class ='fa fa-file icon'></i>
+         Reporting</mat-list-item>
+    <mat-list-item role="listitem">
+        <i class ="fa fa-lock icon"></i>
+        Admin 
+        <span class ="icon ml-5"></span> 
+         <i class ="fa fa-caret-down" position="bottom" #x (click) ="onAdminClick(x)"></i>  
+    </mat-list-item>
+    <div *ngIf ="x.adminListShow" >
+        <ul  class ="nestedList">
+            <li>
+                <i class ="fa fa-home icon"></i>
+                florist Profile
+            </li>
+            <li>
+                <i class ="fa fa-product-hunt icon"></i>
+                Product 
+            </li>
+            <li>
+                <i class ="fa fa-user icon"></i>
+                User Management</li>
+            <!-- <li class ="">Email Template</li> -->
+            <!-- <li>Marketing Campaign</li>
+            <li>Manage Discount</li> -->
+        </ul>
+    </div>
+</mat-list>
+

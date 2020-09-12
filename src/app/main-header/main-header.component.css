@@ -1,0 +1,37 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-form-field {
+    width: 200px;
+  }
+
+*{
+  box-sizing: border-box;
+}  
+
+.space{
+    margin-left:120px;
+}
+
+.image-radius{
+    width: 50px;
+    padding: 4px 12px 0px 0px;
+    border-radius: 50%;
+    margin-right: 8px;
+  
+}
+ .search {
+    /* float: left; */
+    margin-bottom: 0;
+    padding: 0 0px 0 18px;
+    display: flex;  
+    /* height:100%; */
+}   
+
+ .nav-right{
+    text-decoration: none;
+    float: right;
+    list-style: none;
+    padding: 0 12px 0 0px;
+}

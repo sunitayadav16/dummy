@@ -1,0 +1,181 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 p-0 m-0" >
+      <button class ="btn btn-primary float-right mr-4" routerLink ="/"><i class ="fa fa-arrow-left"></i></button>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <form #postForm="ngForm" (ngSubmit)="onSubmit(postForm.value)" class ="userForm"> 
+           <br>
+          <div class="row">
+            <div class="col-md-4">
+              <!-- <div class="form-group">
+                <label >Owner</label>
+                <input type="text" class="form-control" id="name" ngModel name ="owner">
+              </div> -->
+              <div class="form-group">
+                <label >Email</label>
+                <input type="text" class="form-control" id="email" ngModel name ="email" required email>
+              </div>
+              <div class="form-group">
+                <label >Name Prefix</label>
+                <input type="text" class="form-control" id="namePrefix" ngModel name ="namePrefix">
+              </div>
+              <div class="form-group">
+                <label >First Name</label>
+                <input type="text" class="form-control" id="firstName" ngModel name ="firstName"  ngModel pattern="[a-zA-Z ]*" required>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Status</label>
+                <select  class="form-control" ngModel name ="status" required>
+                  <option> Please Select</option>
+                  <option>Active</option>
+                  <option>Inactive</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Password</label>
+                <input type="text" class="form-control" id="password" ngModel name ="password" required minlength="6">
+              </div>
+              <div class="form-group">
+                <label>Middle Name</label>
+                <input type="text" class="form-control" id="middleName" ngModel name ="middleName" ngModel pattern="[a-zA-Z ]*">
+              </div>
+              <div class="form-group">
+                <label>Name Suffix</label>
+                <input type="text" class="form-control" id="nameSuffix" ngModel name ="nameSuffix">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label >Username</label>
+                <input type="text" class="form-control" id="username" ngModel name ="username" required>
+              </div> 
+              <div class="form-group">
+                <label >Re-enter Password</label>
+                <input type="text" class="form-control" id="rePassword" ngModel name ="rePassword" required>
+              </div>     
+              <div class="form-group">
+                <label > Last Name</label>
+                <input type="text" class="form-control" id="lastName" ngModel name ="lastName" pattern="[a-zA-Z ]*" required>
+              </div>   
+              <div class="form-group">
+                <label >Birthday </label>
+                <input type="date" class="form-control" id="birthday" ngModel name ="birthday" required>
+              </div>   
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label >Notes</label>
+                <textarea type="text"  rows ="2"  class="form-control" id="notes" ngModel name ="notes" required></textarea>
+              </div>   
+            </div>
+            <!-- <label>Setting :</label><br><br> -->
+            <!-- <div class="row"> -->
+              <div class="col-md-4">
+                <div class ="form-group">
+                  <label >Default Grid Page</label>
+                  <select class ="form-control" ngModel name ="gridPage" required>
+                    <option>Select Grid Page Size</option>
+                    <option>10</option>
+                    <option>20</option>
+                    <option>30</option>
+                  </select>
+                </div> 
+              </div>
+              <div class="col-md-4">
+                <div class ="form-group">
+                  <label>Default Location</label>
+                <select class ="form-control" ngModel name ="defaultLocation" required>
+                  <option>Select default location</option>
+                  <option>Location 1</option>
+                  <option>Location 2</option>
+                  <option>Location 3</option>
+                </select>
+                </div> 
+              </div>
+              <div class="col-md-4">
+                <div class ="form-group">
+                  <label>Home Screen</label>
+                  <select class ="form-control" ngModel name ="homeScreen" required>
+                    <option>Select Home Screen</option>
+                    <option>Dashboard</option>
+                    <option>New Order</option>
+                    <option>Customer List</option>
+                    <option>Product List</option>
+                    <option>User List</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-12">
+               <div class="form-group">
+                <label>Location </label>
+                <mat-form-field class="example-chip-list" required>
+                  <mat-chip-list #chipList aria-label="Fruit selection">
+                    <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
+                             [removable]="removable" (removed)="remove(fruit)">
+                      {{fruit.name}}
+                      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                    </mat-chip>
+                    <input 
+                           [matChipInputFor]="chipList"
+                           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                           [matChipInputAddOnBlur]="addOnBlur"
+                           (matChipInputTokenEnd)="add($event)">
+                  </mat-chip-list>
+                </mat-form-field>
+               </div> 
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                 <label>Roles </label>
+                 <!-- <input type ="text" class ="form-control" ngModel name ="roles"> -->
+                 <mat-form-field class="example-chip-list" required>
+                  <mat-chip-list #chipList aria-label="Fruit selection">
+                    <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
+                             [removable]="removable" (removed)="remove(fruit)">
+                      {{fruit.name}}
+                      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                    </mat-chip>
+                    <input
+                           [matChipInputFor]="chipList"
+                           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                           [matChipInputAddOnBlur]="addOnBlur"
+                           (matChipInputTokenEnd)="add($event)">
+                  </mat-chip-list>
+                </mat-form-field>
+                </div> 
+              </div>
+               <!-- Add Artist  toggle Button  -->
+               <div class =" p-1 "> 
+                <p  class ="toggle-switch"> &nbsp;&nbsp;  Add Artist</p>  
+                <br>&nbsp;&nbsp;
+                <label class="switch ml-3">
+                  <input type="checkbox" [checked] ='!checked' 
+                   (click) ="onToggleSlide(f)" #f>
+                  <span class="slider round"></span>
+                </label>  
+                 <!-- toggle content  -->
+                 <div *ngIf ="f.checked">
+                  <app-add-artist></app-add-artist>
+                 </div>
+                
+                <br>
+               </div>
+               <hr> 
+          </div>
+          <hr>
+          <div>
+            <button  type ="button"class ="btn btn-primary" mat-button (click)="openDialog()">View Activity</button> &nbsp;
+            <button  type ="button" (click) ="onCancel()"class ="btn btn-danger">Cancel</button>&nbsp;
+            <button  type ="submit" class ="btn btn-primary" [disabled] ="!postForm.valid">Save</button> 
+          </div> 
+        </form>
+        </div>
+    </div>
+</div>

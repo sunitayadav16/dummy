@@ -1,0 +1,13 @@
+.box{
+   margin:10px;
+   margin-top:0px;
+   padding:5px;
+   width:fit-content;
+}
+ 
+button{
+   border:none;
+   /* border-spacing: none; ---*/
+   background-color:transparent;
+   outline:none;
+}

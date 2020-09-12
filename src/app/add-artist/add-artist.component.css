@@ -1,0 +1,21 @@
+/* .mybuttonId{
+    /* overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    
+    padding: 3px;
+    text-align: left;
+    border: 1px solid transparent;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    height: 100%; */
+/* } */ 
+
+.mat-form-field {
+    margin-top: 16px;
+  }
+  
+input.ng-invalid.ng-touched,select.ng-invalid .ng-touched, textarea.ng-touched{
+    border:1px solid rgb(238, 68, 68);
+   }
